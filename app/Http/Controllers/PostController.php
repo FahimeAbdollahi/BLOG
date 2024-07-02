@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts.index', ['posts' => auth()->user()->posts]);
+        return view('post.index', ['posts' => auth()->user()->posts]);
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('post.index');
     }
 }
 
