@@ -4,11 +4,9 @@
 
 @section('content')
     <h1>Comments</h1>
-    <!-- Display existing comments -->
     @foreach ($post->comments as $comment)
         <div class="comment">
             {{ $comment->content }}
-            <!-- Add edit and delete buttons here -->
         </div>
     @endforeach
 
