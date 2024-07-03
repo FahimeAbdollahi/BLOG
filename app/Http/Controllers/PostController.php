@@ -63,4 +63,31 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
+
+    public function storeComment(Request $request, Post $post)
+{
+    // Validate input (e.g., content field)
+    $request->validate([
+        'content' => 'required|max:255',
+    ]);
+
+    // Create and associate the comment with the post
+    $post->comments()->create([
+        'content' => $request->input('content'),
+    ]);
+
+}
+
+public function storeTag(Request $request, Post $post)
+{
+    $request->validate([
+        'name' => 'required|max:50',
+    ]);
+
+    // Create and associate the tag with the post
+    $post->tags()->create([
+        'name' => $request->input('name'),
+    ]);
+
+}
 }
