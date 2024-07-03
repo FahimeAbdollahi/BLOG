@@ -24,4 +24,6 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.e
 Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update'); 
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy'); 
 Route::post('/posts/{post}/comments', 'PostController@storeComment')->name('comments.store');
+Route::post('/posts/{post}/tags', 'PostController@storeTag')->name('tags.store');
+
 
